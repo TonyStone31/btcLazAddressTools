@@ -1,0 +1,312 @@
+object frmMain: TfrmMain
+  Left = 2130
+  Height = 730
+  Top = 1105
+  Width = 850
+  Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
+  ClientHeight = 730
+  ClientWidth = 850
+  Constraints.MinHeight = 730
+  Constraints.MinWidth = 850
+  Position = poDefault
+  LCLVersion = '2.0.12.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 707
+    Width = 850
+    Panels = <>
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 707
+    Top = 0
+    Width = 850
+    ActivePage = TabSheet3
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet3: TTabSheet
+      Caption = 'Key-Pair Explorer'
+      ClientHeight = 673
+      ClientWidth = 844
+      object Panel2: TPanel
+        AnchorSideLeft.Control = TabSheet3
+        AnchorSideRight.Control = TabSheet3
+        AnchorSideRight.Side = asrBottom
+        Left = 10
+        Height = 256
+        Top = 136
+        Width = 824
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        ClientHeight = 256
+        ClientWidth = 824
+        TabOrder = 1
+        object edtPubKeyComp: TLabeledEdit
+          AnchorSideRight.Control = Panel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 224
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Public Key (compressed, 66 characters [0-9A-F]):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+        object edtPubKey: TLabeledEdit
+          AnchorSideRight.Control = Panel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 168
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Public Key (130 characters [0-9A-F]):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object edtBTCaddrCompr: TLabeledEdit
+          AnchorSideRight.Control = Panel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 112
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Bitcoin Address (compressed):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object edtBTCaddress: TLabeledEdit
+          AnchorSideRight.Control = Panel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 56
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Bitcoin Address:'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label2: TLabel
+          Left = 16
+          Height = 14
+          Top = 8
+          Width = 107
+          Caption = 'Public Key Details'
+          ParentColor = False
+        end
+        object Button2: TButton
+          Left = 150
+          Height = 20
+          Top = 8
+          Width = 184
+          Caption = 'Compute Below'
+          TabOrder = 0
+        end
+      end
+      object Panel3: TPanel
+        AnchorSideLeft.Control = TabSheet3
+        AnchorSideRight.Control = TabSheet3
+        AnchorSideRight.Side = asrBottom
+        Left = 10
+        Height = 256
+        Top = 392
+        Width = 824
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        ClientHeight = 256
+        ClientWidth = 824
+        TabOrder = 2
+        object edtPvtKeyB64: TLabeledEdit
+          AnchorSideRight.Control = Panel3
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 223
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Private Key Base64 (44 characters):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+        object edtPvtKeyHex: TLabeledEdit
+          AnchorSideRight.Control = Panel3
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 167
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Private Key Hexadecimal Format (64 characters [0-9A-F]):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object edtPvtKeyWIFComp: TLabeledEdit
+          AnchorSideRight.Control = Panel3
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 111
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Private Key WIF (compressed, 52 characters base58, starts with a ''K'' or ''L''):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object edtPvtKeyWIF: TLabeledEdit
+          AnchorSideRight.Control = Panel3
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 25
+          Top = 55
+          Width = 805
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          EditLabel.Height = 14
+          EditLabel.Width = 805
+          EditLabel.Caption = 'Private Key WIF (51 characters base58, starts with a ''5''):'
+          EditLabel.ParentColor = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label3: TLabel
+          Left = 16
+          Height = 14
+          Top = 14
+          Width = 112
+          Caption = 'Private Key Details'
+          ParentColor = False
+        end
+        object Button1: TButton
+          Left = 144
+          Height = 20
+          Top = 8
+          Width = 184
+          Caption = 'Compute Below'
+          TabOrder = 0
+        end
+      end
+      object Panel1: TPanel
+        AnchorSideLeft.Control = TabSheet3
+        AnchorSideRight.Control = TabSheet3
+        AnchorSideRight.Side = asrBottom
+        Left = 10
+        Height = 128
+        Top = 8
+        Width = 824
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        ClientHeight = 128
+        ClientWidth = 824
+        TabOrder = 0
+        object btnRNDpvtKey: TButton
+          Left = 16
+          Height = 32
+          Top = 61
+          Width = 211
+          Caption = 'Generate Random Private Key'
+          TabOrder = 2
+        end
+        object edtPassPhrase: TEdit
+          AnchorSideRight.Control = Panel1
+          AnchorSideRight.Side = asrBottom
+          Left = 232
+          Height = 25
+          Top = 21
+          Width = 581
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          TabOrder = 1
+          Text = 'edtPassPhrase'
+        end
+        object Label1: TLabel
+          Left = 232
+          Height = 14
+          Top = 5
+          Width = 392
+          Caption = '"Brain Wallet" Passphrase:                                    (Algorithm: SHA256)'
+          ParentColor = False
+        end
+        object btnBrainpvtKey: TButton
+          Left = 16
+          Height = 32
+          Top = 13
+          Width = 211
+          Caption = 'Generate Random Private Key'
+          OnClick = btnBrainpvtKeyClick
+          TabOrder = 0
+        end
+        object edtPvtKey: TEdit
+          AnchorSideRight.Side = asrBottom
+          Left = 16
+          Height = 25
+          Top = 93
+          Width = 790
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Right = 10
+          TabOrder = 3
+          Text = 'edtPvtKey'
+        end
+      end
+      object Label5: TLabel
+        Left = 17
+        Height = 14
+        Top = 655
+        Width = 473
+        Caption = 'Double click any field to copy to clip board.  Hover over addresses for QR Code.'
+        ParentColor = False
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Bulk Wallet Generator'
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'About This Tool'
+      ClientHeight = 673
+      ClientWidth = 844
+      object Label4: TLabel
+        Left = 44
+        Height = 168
+        Top = 32
+        Width = 521
+        Caption = 'This tool was created by Tony Stone and inspired by bitaddress.org.'#10#10'The purpose is to securely generate Bitcoin Addresses that can be used.'#10#10'The other purpose of creating this tool was an exercise in learning to use '#10'the Lazarus IDE and some Pascal development.'#10#10'The cryptographic function are all written and implemented by use of'#10'CryptoLib4Pascal by Xor-el and his source code can be found at'#10'https://github.com/Xor-el/CryptoLib4Pascal.'#10#10'The source of this program can be found on my Github (When I learn to properly use it)'
+        ParentColor = False
+      end
+    end
+  end
+end
