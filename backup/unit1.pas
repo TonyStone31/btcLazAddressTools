@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, ExtCtrls,
-  StdCtrls;
+  StdCtrls, btckeyfunctions;
 
 type
 
@@ -41,6 +41,7 @@ type
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     procedure btnBrainpvtKeyClick(Sender: TObject);
+    procedure btnRNDpvtKeyClick(Sender: TObject);
   private
 
   public
@@ -57,6 +58,11 @@ implementation
 { TfrmMain }
 
 procedure TfrmMain.btnBrainpvtKeyClick(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmMain.btnRNDpvtKeyClick(Sender: TObject);
 begin
 
 end;

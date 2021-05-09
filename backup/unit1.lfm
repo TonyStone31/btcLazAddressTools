@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 2130
+  Left = 2324
   Height = 730
-  Top = 1105
+  Top = 1134
   Width = 850
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
   ClientHeight = 730
@@ -240,6 +240,7 @@ object frmMain: TfrmMain
           Top = 61
           Width = 211
           Caption = 'Generate Random Private Key'
+          OnClick = btnRNDpvtKeyClick
           TabOrder = 2
         end
         object edtPassPhrase: TEdit
@@ -287,8 +288,8 @@ object frmMain: TfrmMain
         Left = 17
         Height = 14
         Top = 655
-        Width = 472
-        Caption = 'Double click any feild to copy to clip board.  Hover over addresses for QR Code.'
+        Width = 473
+        Caption = 'Double click any field to copy to clip board.  Hover over addresses for QR Code.'
         ParentColor = False
       end
     end

@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 2130
+  Left = 2324
   Height = 730
-  Top = 1105
+  Top = 1134
   Width = 850
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
   ClientHeight = 730
@@ -47,14 +47,14 @@ object frmMain: TfrmMain
         object edtPubKeyComp: TLabeledEdit
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 8
+          Left = 16
           Height = 25
           Top = 224
-          Width = 805
-          Anchors = [akTop, akLeft, akRight]
+          Width = 797
+          Anchors = [akTop, akRight]
           BorderSpacing.Right = 10
           EditLabel.Height = 14
-          EditLabel.Width = 805
+          EditLabel.Width = 797
           EditLabel.Caption = 'Public Key (compressed, 66 characters [0-9A-F]):'
           EditLabel.ParentColor = False
           ReadOnly = True
@@ -63,14 +63,14 @@ object frmMain: TfrmMain
         object edtPubKey: TLabeledEdit
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 8
+          Left = 16
           Height = 25
           Top = 168
-          Width = 805
-          Anchors = [akTop, akLeft, akRight]
+          Width = 797
+          Anchors = [akTop, akRight]
           BorderSpacing.Right = 10
           EditLabel.Height = 14
-          EditLabel.Width = 805
+          EditLabel.Width = 797
           EditLabel.Caption = 'Public Key (130 characters [0-9A-F]):'
           EditLabel.ParentColor = False
           ReadOnly = True
@@ -79,14 +79,14 @@ object frmMain: TfrmMain
         object edtBTCaddrCompr: TLabeledEdit
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 8
+          Left = 16
           Height = 25
           Top = 112
-          Width = 805
-          Anchors = [akTop, akLeft, akRight]
+          Width = 797
+          Anchors = [akTop, akRight]
           BorderSpacing.Right = 10
           EditLabel.Height = 14
-          EditLabel.Width = 805
+          EditLabel.Width = 797
           EditLabel.Caption = 'Bitcoin Address (compressed):'
           EditLabel.ParentColor = False
           ReadOnly = True
@@ -95,14 +95,14 @@ object frmMain: TfrmMain
         object edtBTCaddress: TLabeledEdit
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 8
+          Left = 16
           Height = 25
           Top = 56
-          Width = 805
-          Anchors = [akTop, akLeft, akRight]
+          Width = 797
+          Anchors = [akTop, akRight]
           BorderSpacing.Right = 10
           EditLabel.Height = 14
-          EditLabel.Width = 805
+          EditLabel.Width = 797
           EditLabel.Caption = 'Bitcoin Address:'
           EditLabel.ParentColor = False
           ReadOnly = True
@@ -240,6 +240,7 @@ object frmMain: TfrmMain
           Top = 61
           Width = 211
           Caption = 'Generate Random Private Key'
+          OnClick = btnRNDpvtKeyClick
           TabOrder = 2
         end
         object edtPassPhrase: TEdit
@@ -252,7 +253,7 @@ object frmMain: TfrmMain
           Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Right = 10
           TabOrder = 1
-          Text = 'edtPassPhrase'
+          Text = 'bubble kid safe candle dumpster fire family link removed vehicle implement cracker'
         end
         object Label1: TLabel
           Left = 232
