@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, ExtCtrls,
-  StdCtrls, btckeyfunctions, ClpEncoders, Clipbrd;
+  StdCtrls, btckeyfunctions, ClpEncoders, Clipbrd, USha256;
 
 type
 
@@ -98,9 +98,7 @@ astr : string;
 
 begin
 
-     sbt := StrToByte(edtPassPhrase.text);
-  astr:=TBase64.Encode(sbt);
-  edtPvtKey.Text:=astr;
+  edtPvtKey.Text:=SHA256ToStr(CalcSHA256(edtPassPhrase.text));
 
 end;
 
