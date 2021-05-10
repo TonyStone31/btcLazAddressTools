@@ -81,7 +81,7 @@ type
 
 var
 frmMain: TfrmMain;
-IsprvInValid: Boolean;
+IsPRVkeyInputValid: Boolean;
 KeyPair: TKeyPair;
 
 
@@ -99,6 +99,21 @@ astr : string;
 begin
 
   edtPvtKey.Text:=SHA256ToStr(CalcSHA256(edtPassPhrase.text));
+  IsPRVkeyInputValid:=true; // i will need to create some function or procedure to actually validate input
+                      // for now i will just tell it that the private key is valid
+  if IsPRVkeyInputValid = true then
+     begin
+
+       // write some code to get public key from this generated private key (brain wallet)
+
+        KeyPair := TbtcKeyFunctions.GenPubKeyFromPvtInput(TKeyType.SECP256K1);
+        // now I am stuck... how do I tell this function what my input private key is?
+
+        btnBrainpvtKey.Enabled:=false;
+        btnRNDpvtKey.enabled:=false;
+        btnComputePrvKeyDet.enabled:=true;
+        btnComputePubKeyDet.Enabled:=true;
+  end;
 
 end;
 
@@ -110,7 +125,10 @@ begin
   edtPvtKeyWIFComp.Text:= TBase58.Encode(KeyPair.PrivateKey);
   btnComputePrvKeyDet.Enabled:=false;
   if (btnComputePubKeyDet.enabled = false) and (btnComputePrvKeyDet.enabled = false) then
-     btnRNDpvtKey.enabled:= true;
+     begin
+       btnRNDpvtKey.enabled:= true;
+       btnBrainpvtKey.enabled:=true;
+    end;
 end;
 
 procedure TfrmMain.btnComputePubKeyDetClick(Sender: TObject);
@@ -118,7 +136,10 @@ begin
   edtPubKey.Text:= ByteToHexString(KeyPair.PublicKey);
   btnComputePubKeyDet.Enabled:=false;
     if (btnComputePubKeyDet.enabled = false) and (btnComputePrvKeyDet.enabled = false) then
-     btnRNDpvtKey.enabled:= true;
+     begin
+       btnRNDpvtKey.enabled:= true;
+       btnBrainpvtKey.enabled:=true;
+    end;
 end;
 
 procedure TfrmMain.btnRNDpvtKeyClick(Sender: TObject);
@@ -129,7 +150,7 @@ begin
 
      edtPvtKey.Hint:= IntToStr(length(edtPvtKey.Text)) + ' Characters Counted (debuging hint)';
 
-     IsprvInValid:=true;
+     IsPRVkeyInputValid:=true;
 
 
 
@@ -137,13 +158,15 @@ begin
      // then enable "compute below" buttons
      //  will obviously need some validation code written in future
 
-     if IsprvInValid = true then
+     if IsPRVkeyInputValid = true then
      begin
           btnComputePrvKeyDet.enabled := true;
           btnComputePubKeyDet.Enabled:=true;
+          btnRNDpvtKey.enabled:=false;
+          btnRNDpvtKey.Caption:='Generate New Random Private Key (More Secure)';
      end;
-     btnRNDpvtKey.enabled:=false;
-     btnRNDpvtKey.Caption:='Generate New Random Private Key (More Secure)';
+
+
 
 end;
 

@@ -2,4 +2,5 @@
 <CONFIG>
   <Compiler Value="/usr/bin/fpc" Date="1594078105"/>
   <Params Value=" -MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq -Fi/media/tony/storpart/GIT/btcLazAddressTools/lib/x86_64-linux -Fu/usr/share/lazarus/2.0.12/lcl/units/x86_64-linux/gtk2 -Fu/usr/share/lazarus/2.0.12/lcl/units/x86_64-linux -Fu/media/tony/storpart/GIT/btcLazAddressTools/lib/CryptoLib4Pascal-master/CryptoLib/src/Packages/FPC/lib/x86_64-linux -Fu/home/tony/.lazarus/onlinepackagemanager/packages/SimpleBaseLib/src/Packages/FPC/lib/x86_64-linux -Fu/usr/share/lazarus/2.0.12/components/lazutils/lib/x86_64-linux -Fu/media/tony/storpart/GIT/btcLazAddressTools/lib/HashLib4Pascal-master/HashLib/src/Packages/FPC/lib/HashLib4Pascal/x86_64-linux -Fu/usr/share/lazarus/2.0.12/packager/units/x86_64-linux -Fu/media/tony/storpart/GIT/btcLazAddressTools/ -FU/media/tony/storpart/GIT/btcLazAddressTools/lib/x86_64-linux/ -FE/media/tony/storpart/GIT/btcLazAddressTools/ -o/media/tony/storpart/GIT/btcLazAddressTools/btcaddresstools -dLCL -dLCLgtk2 btcaddresstools.lpr"/>
+  <Complete Value="False"/>
 </CONFIG>
