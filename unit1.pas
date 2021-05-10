@@ -92,7 +92,15 @@ implementation
 { TfrmMain }
 
 procedure TfrmMain.btnBrainpvtKeyClick(Sender: TObject);
+var
+sbt: TBytes;
+astr : string;
+
 begin
+
+     sbt := StrToByte(edtPassPhrase.text);
+  astr:=TBase64.Encode(sbt);
+  edtPvtKey.Text:=astr;
 
 end;
 
@@ -102,12 +110,17 @@ begin
 
   edtPvtKeyB64.Text:= TBase64.Encode(KeyPair.PrivateKey);
   edtPvtKeyWIFComp.Text:= TBase58.Encode(KeyPair.PrivateKey);
-
+  btnComputePrvKeyDet.Enabled:=false;
+  if (btnComputePubKeyDet.enabled = false) and (btnComputePrvKeyDet.enabled = false) then
+     btnRNDpvtKey.enabled:= true;
 end;
 
 procedure TfrmMain.btnComputePubKeyDetClick(Sender: TObject);
 begin
   edtPubKey.Text:= ByteToHexString(KeyPair.PublicKey);
+  btnComputePubKeyDet.Enabled:=false;
+    if (btnComputePubKeyDet.enabled = false) and (btnComputePrvKeyDet.enabled = false) then
+     btnRNDpvtKey.enabled:= true;
 end;
 
 procedure TfrmMain.btnRNDpvtKeyClick(Sender: TObject);
@@ -131,6 +144,8 @@ begin
           btnComputePrvKeyDet.enabled := true;
           btnComputePubKeyDet.Enabled:=true;
      end;
+     btnRNDpvtKey.enabled:=false;
+     btnRNDpvtKey.Caption:='Generate New Random Private Key (More Secure)';
 
 end;
 
