@@ -105,8 +105,7 @@ begin
      begin
 
        // write some code to get public key from this generated private key (brain wallet)
-
-        KeyPair := TbtcKeyFunctions.GenPubKeyFromPvtInput(TKeyType.SECP256K1);
+       // KeyPair := TbtcKeyFunctions.GenPubKeyFromPvtInput(TKeyType.SECP256K1);
         // now I am stuck... how do I tell this function what my input private key is?
 
         btnBrainpvtKey.Enabled:=false;
@@ -163,6 +162,7 @@ begin
           btnComputePrvKeyDet.enabled := true;
           btnComputePubKeyDet.Enabled:=true;
           btnRNDpvtKey.enabled:=false;
+          btnBrainpvtKey.Enabled:=False;
           btnRNDpvtKey.Caption:='Generate New Random Private Key (More Secure)';
      end;
 
