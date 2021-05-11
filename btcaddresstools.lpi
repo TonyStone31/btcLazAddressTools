@@ -48,12 +48,12 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="unit1.pas"/>
+        <Filename Value="frmmainunit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit1"/>
+        <UnitName Value="frmMainunit"/>
       </Unit1>
       <Unit2>
         <Filename Value="btckeyfunctions.pas"/>

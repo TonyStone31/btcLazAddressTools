@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 2049
+  Left = 1827
   Height = 780
-  Top = 1156
+  Top = 1184
   Width = 1156
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
   ClientHeight = 780
@@ -24,9 +24,9 @@ object frmMain: TfrmMain
     Height = 757
     Top = 0
     Width = 1156
-    ActivePage = TabSheet3
+    ActivePage = TabSheet2
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     object TabSheet3: TTabSheet
       Caption = 'Key-Pair Explorer'
@@ -63,7 +63,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 4
-          OnChange = edtPubKeyCompChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtPubKey: TLabeledEdit
@@ -83,7 +83,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 3
-          OnChange = edtPubKeyChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtBTCaddrCompr: TLabeledEdit
@@ -103,7 +103,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 2
-          OnChange = edtBTCaddrComprChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtBTCaddress: TLabeledEdit
@@ -123,7 +123,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 1
-          OnChange = edtBTCaddressChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object Label2: TLabel
@@ -176,7 +176,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 4
-          OnChange = edtPvtKeyB64Change
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtPvtKeyHex: TLabeledEdit
@@ -196,7 +196,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 3
-          OnChange = edtPvtKeyHexChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtPvtKeyWIFComp: TLabeledEdit
@@ -216,7 +216,8 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 2
-          OnChange = edtPvtKeyWIFCompChange
+          OnChange = edtDbgHintLength
+          OnDblClick = DblClick2CLPBRD
         end
         object edtPvtKeyWIF: TLabeledEdit
           AnchorSideLeft.Control = Panel3
@@ -235,6 +236,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 1
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object Label3: TLabel
@@ -317,7 +319,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 2
-          OnChange = edtPvtKeyChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object edtPassPhrase: TLabeledEdit
@@ -337,7 +339,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           TabOrder = 3
           Text = 'bubble kid safe candle dumpster fire family link removed vehicle implement cracker'
-          OnChange = edtPassPhraseChange
+          OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
       end
@@ -354,6 +356,15 @@ object frmMain: TfrmMain
       Caption = 'Bulk Wallet Generator'
       ClientHeight = 723
       ClientWidth = 1150
+      object btnCancel: TButton
+        Left = 10
+        Height = 32
+        Top = 8
+        Width = 161
+        Caption = 'Cancel'
+        OnClick = btnCancelClick
+        TabOrder = 3
+      end
       object btnBulkGen: TButton
         Left = 10
         Height = 32
@@ -376,10 +387,11 @@ object frmMain: TfrmMain
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderSpacing.Left = 10
         BorderSpacing.Right = 10
-        Font.Height = -11
+        Font.Height = -9
         Font.Name = 'Monospace'
         ParentFont = False
         ReadOnly = True
+        ScrollBars = ssAutoBoth
         TabOrder = 1
         WordWrap = False
       end

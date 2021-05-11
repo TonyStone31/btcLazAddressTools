@@ -18,6 +18,7 @@ type
     btnComputePrvKeyDet: TButton;
     btnComputePubKeyDet: TButton;
     btnBulkGen: TButton;
+    btnCancel: TButton;
     edtBulkAmount: TEdit;
     edtBTCaddrCompr: TLabeledEdit;
     edtBTCaddress: TLabeledEdit;
@@ -49,27 +50,11 @@ type
     procedure btnComputePubKeyDetClick(Sender: TObject);
     procedure btnRNDpvtKeyClick(Sender: TObject);
     procedure btnBulkGenClick(Sender: TObject);
-    procedure edtBTCaddrComprChange(Sender: TObject);
-
-    procedure edtBTCaddressChange(Sender: TObject);
-
-    procedure edtPassPhraseChange(Sender: TObject);
-
-    procedure edtPubKeyChange(Sender: TObject);
-    procedure edtPubKeyCompChange(Sender: TObject);
-
-
-    procedure edtPvtKeyB64Change(Sender: TObject);
-
-
-    procedure edtPvtKeyChange(Sender: TObject);
-
-    procedure edtPvtKeyHexChange(Sender: TObject);
-
-    procedure edtPvtKeyWIFCompChange(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
 
     procedure FormCreate(Sender: TObject);
     procedure DblClick2CLPBRD(Sender: TObject);
+    procedure edtDbgHintLength(Sender: TObject);
 
   private
 
@@ -90,6 +75,7 @@ var
 frmMain: TfrmMain;
 IsPRVkeyInputValid: Boolean;
 KeyPair: TKeyPair;
+forcedCancel: Boolean;
 
 
 implementation
@@ -186,64 +172,38 @@ begin
 
      qty := StrToInt(edtBulkAmount.Text);
      memBulk.Lines.Clear;
+
+     btnBulkGen.Visible:=False;  // so user doesnt keep clicking if generating large list
+
+
+
      for i:= 1 to qty do
      begin
+     if forcedCancel = true then exit;
      KeyPair := TbtcKeyFunctions.GenerateECKeyPair(TKeyType.SECP256K1);
      memBulk.Lines.Add(ByteToHexString(KeyPair.PrivateKey) + ' , ' + ByteToHexString(KeyPair.PublicKey));
+
+
+       // make the memo scroll as it is populated... just looks cool i guess
+       memBulk.SelStart:=memBulk.GetTextLen;
+       memBulk.SelLength:=0;
+       memBulk.ScrollBy(0, memBulk.Lines.Count);
+       memBulk.Refresh;
+       application.ProcessMessages;
+
      end;
 
+     btnBulkGen.Visible:=True;  // re-enables so user can smash all day long... whatever
 
 end;
 
-procedure TfrmMain.edtBTCaddrComprChange(Sender: TObject);
+procedure TfrmMain.btnCancelClick(Sender: TObject);
 begin
-   edtBTCaddrCompr.Hint:= IntToStr(length(edtBTCaddrCompr.Text)) + ' Characters Counted (debuging hint)';
+    forcedCancel:=true;
 end;
 
 
 
-procedure TfrmMain.edtBTCaddressChange(Sender: TObject);
-begin
-  edtBTCaddress.Hint:= IntToStr(length(edtBTCaddress.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-
-procedure TfrmMain.edtPassPhraseChange(Sender: TObject);
-begin
-  edtPassPhrase.Hint:= IntToStr(length(edtPassPhrase.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-
-procedure TfrmMain.edtPubKeyChange(Sender: TObject);
-begin
-     edtPubKey.Hint:= IntToStr(length(edtPubKey.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-procedure TfrmMain.edtPubKeyCompChange(Sender: TObject);
-begin
-   edtPubKeyComp.Hint:= IntToStr(length(edtPubKeyComp.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-
-
-procedure TfrmMain.edtPvtKeyB64Change(Sender: TObject);
-begin
-     edtPvtKeyB64.Hint:= IntToStr(length(edtPvtKeyB64.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-
-
-procedure TfrmMain.edtPvtKeyChange(Sender: TObject);
-begin
-   edtPvtKey.Hint:= IntToStr(length(edtPvtKey.Text)) + ' Characters Counted (debuging hint)';
-end;
-
-
-
-procedure TfrmMain.edtPvtKeyHexChange(Sender: TObject);
-begin
-     edtPvtKeyHex.Hint:= IntToStr(length(edtPvtKeyHex.Text)) + ' Characters Counted (debuging hint)';
-end;
 
 
 
@@ -258,14 +218,14 @@ begin
 end;
 
 
-
-
-
-
-procedure TfrmMain.edtPvtKeyWIFCompChange(Sender: TObject);
+procedure TfrmMain.edtDbgHintLength(Sender: TObject);
+var
+theDbgHint: TLabeledEdit;
 begin
-      edtPvtKeyWIFComp.Hint:= IntToStr(length(edtPvtKeyWIFComp.Text)) + ' Characters Counted (debuging hint)';
+   theDbgHint := sender as TLabeledEdit;
+theDbgHint.Hint:= IntToStr(length(theDbgHint.Text)) + ' Characters Counted (debuging hint)';
 end;
+
 
 
 
