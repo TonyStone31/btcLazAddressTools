@@ -38,7 +38,7 @@ type
 {$SCOPEDENUMS OFF}
 
 type
-  TSignerUtils = class sealed(TObject)
+  TbtcKeyFunctions = class sealed(TObject)
 
   strict private
 
@@ -73,7 +73,7 @@ type
 
 implementation
 
-class function btckeyfunctions.GetCurveFromKeyType(AKeyType: TKeyType)
+class function tbtckeyfunctions.GetCurveFromKeyType(AKeyType: TKeyType)
   : IX9ECParameters;
 var
   CurveName: string;
@@ -82,19 +82,19 @@ begin
   Result := TCustomNamedCurves.GetByName(CurveName);
 end;
 
-class function btckeyfunctions.GetCurve(keyType: TKeyType): IX9ECParameters;
+class function tbtckeyfunctions.GetCurve(keyType: TKeyType): IX9ECParameters;
 begin
   Result := GetCurveFromKeyType(keyType);
 end;
 
-class function btckeyfunctions.GetDomain(curve: IX9ECParameters)
+class function tbtckeyfunctions.GetDomain(curve: IX9ECParameters)
   : IECDomainParameters;
 begin
   Result := TECDomainParameters.Create(curve.curve, curve.G, curve.N, curve.H,
     curve.GetSeed);
 end;
 
-class function btckeyfunctions.GetSecureRandom: ISecureRandom;
+class function tbtckeyfunctions.GetSecureRandom: ISecureRandom;
 begin
   if FSecureRandom <> Nil then
   begin
@@ -107,12 +107,12 @@ begin
   end;
 end;
 
-class function btckeyfunctions.GetSigner(): ISigner;
+class function tbtckeyfunctions.GetSigner(): ISigner;
 begin
   Result := TSignerUtilities.GetSigner(SigningAlgorithm);
 end;
 
-class function btckeyfunctions.SignMessage(const message: TBytes;
+class function tbtckeyfunctions.SignMessage(const message: TBytes;
   const PrivateKey: TBytes; AKeyType: TKeyType): TBytes;
 var
   LSigner: ISigner;
@@ -130,7 +130,7 @@ begin
   Result := LSigner.GenerateSignature();
 end;
 
-class function btckeyfunctions.VerifySignature(const signature: TBytes;
+class function tbtckeyfunctions.VerifySignature(const signature: TBytes;
   const &message: TBytes; const PublicKey: TBytes; AKeyType: TKeyType): Boolean;
 var
   LSigner: ISigner;
@@ -148,7 +148,7 @@ begin
   Result := LSigner.VerifySignature(signature);
 end;
 
-class function btckeyfunctions.GenerateECKeyPair(AKeyType: TKeyType): TKeyPair;
+class function tbtckeyfunctions.GenerateECKeyPair(AKeyType: TKeyType): TKeyPair;
 var
   LCurve: IX9ECParameters;
   domain: IECDomainParameters;

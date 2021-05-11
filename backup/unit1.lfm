@@ -64,7 +64,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 4
           OnChange = edtPubKeyCompChange
-          OnDblClick = edtPubKeyCompDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtPubKey: TLabeledEdit
           AnchorSideLeft.Control = Panel2
@@ -84,7 +84,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 3
           OnChange = edtPubKeyChange
-          OnDblClick = edtPubKeyDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtBTCaddrCompr: TLabeledEdit
           AnchorSideLeft.Control = Panel2
@@ -104,7 +104,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 2
           OnChange = edtBTCaddrComprChange
-          OnDblClick = edtBTCaddrComprDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtBTCaddress: TLabeledEdit
           AnchorSideLeft.Control = Panel2
@@ -124,7 +124,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 1
           OnChange = edtBTCaddressChange
-          OnDblClick = edtBTCaddressDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object Label2: TLabel
           Left = 16
@@ -177,7 +177,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 4
           OnChange = edtPvtKeyB64Change
-          OnDblClick = edtPvtKeyB64DblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtPvtKeyHex: TLabeledEdit
           AnchorSideLeft.Control = Panel3
@@ -197,7 +197,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 3
           OnChange = edtPvtKeyHexChange
-          OnDblClick = edtPvtKeyHexDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtPvtKeyWIFComp: TLabeledEdit
           AnchorSideLeft.Control = Panel3
@@ -217,7 +217,6 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 2
           OnChange = edtPvtKeyWIFCompChange
-          OnDblClick = edtPvtKeyWIFCompDblClick
         end
         object edtPvtKeyWIF: TLabeledEdit
           AnchorSideLeft.Control = Panel3
@@ -236,7 +235,7 @@ object frmMain: TfrmMain
           EditLabel.ParentColor = False
           ReadOnly = True
           TabOrder = 1
-          OnDblClick = edtPvtKeyWIFDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object Label3: TLabel
           Left = 16
@@ -319,7 +318,7 @@ object frmMain: TfrmMain
           ReadOnly = True
           TabOrder = 2
           OnChange = edtPvtKeyChange
-          OnDblClick = edtPvtKeyDblClick
+          OnDblClick = DblClick2CLPBRD
         end
         object edtPassPhrase: TLabeledEdit
           AnchorSideLeft.Control = Panel1
@@ -339,7 +338,7 @@ object frmMain: TfrmMain
           TabOrder = 3
           Text = 'bubble kid safe candle dumpster fire family link removed vehicle implement cracker'
           OnChange = edtPassPhraseChange
-          OnDblClick = edtPassPhraseDblClick
+          OnDblClick = DblClick2CLPBRD
         end
       end
       object Label5: TLabel
@@ -418,8 +417,8 @@ object frmMain: TfrmMain
         Left = 44
         Height = 168
         Top = 32
-        Width = 521
-        Caption = 'This tool was created by Tony Stone and inspired by bitaddress.org.'#10#10'The purpose is to securely generate Bitcoin Addresses that can be used.'#10#10'The other purpose of creating this tool was an exercise in learning to use '#10'the Lazarus IDE and some Pascal development.'#10#10'The cryptographic function are all written and implemented by use of'#10'CryptoLib4Pascal by Xor-el and his source code can be found at'#10'https://github.com/Xor-el/CryptoLib4Pascal.'#10#10'The source of this program can be found on my Github (When I learn to properly use it)'
+        Width = 627
+        Caption = 'This tool was created by Tony Stone and inspired by http://coreyhaddad.com/bitcoin/bitaddress.org.htm.'#10#10'The purpose is to securely generate Bitcoin Addresses that can be used.'#10#10'The other purpose of creating this tool was an exercise in learning to use '#10'the Lazarus IDE and some Pascal development.'#10#10'The cryptographic function are all written and implemented by use of'#10'CryptoLib4Pascal by Xor-el and his source code can be found at'#10'https://github.com/Xor-el/CryptoLib4Pascal.'#10#10'The source of this program can be found on my Github (When I learn to properly use it)'
         ParentColor = False
       end
     end

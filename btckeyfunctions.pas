@@ -210,10 +210,14 @@ var
 begin
   LCurve := GetCurve(AKeyType);
   domain := GetDomain(LCurve);
+
   KeyPairGeneratorInstance := TGeneratorUtilities.GetKeyPairGenerator('ECDSA');
   KeyPairGeneratorInstance.Init(TECKeyGenerationParameters.Create(domain,
     SecureRandom) as IECKeyGenerationParameters);
   askp := KeyPairGeneratorInstance.GenerateKeyPair();
+
+
+
   Result.PrivateKey := (askp.Private as IECPrivateKeyParameters)
     .D.ToByteArrayUnsigned;
   Result.PublicKey := (askp.Public as IECPublicKeyParameters).Q.GetEncoded();

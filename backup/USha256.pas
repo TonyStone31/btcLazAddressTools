@@ -236,9 +236,7 @@ var
 begin
   Result:= EmptyStr;
   for i:= 0 to 6 do
-    //Result:= Result + IntToHex(Hash[i],8) + #32;
-    // i didnt like the space it was adding - not sure if i need it or not
-  Result:= Result + IntToHex(Hash[i],8);
+    Result:= Result + IntToHex(Hash[i],8) + #32;
   Result:= Result + IntToHex(Hash[7],8);
 end;
 

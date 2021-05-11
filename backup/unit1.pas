@@ -50,34 +50,41 @@ type
     procedure btnRNDpvtKeyClick(Sender: TObject);
     procedure btnBulkGenClick(Sender: TObject);
     procedure edtBTCaddrComprChange(Sender: TObject);
-    procedure edtBTCaddrComprDblClick(Sender: TObject);
+
     procedure edtBTCaddressChange(Sender: TObject);
-    procedure edtBTCaddressDblClick(Sender: TObject);
+
     procedure edtPassPhraseChange(Sender: TObject);
-    procedure edtPassPhraseDblClick(Sender: TObject);
+
     procedure edtPubKeyChange(Sender: TObject);
     procedure edtPubKeyCompChange(Sender: TObject);
-    procedure edtPubKeyCompDblClick(Sender: TObject);
-    procedure edtPubKeyDblClick(Sender: TObject);
+
+
     procedure edtPvtKeyB64Change(Sender: TObject);
-    procedure edtPvtKeyB64DblClick(Sender: TObject);
+
+
     procedure edtPvtKeyChange(Sender: TObject);
-    procedure edtPvtKeyDblClick(Sender: TObject);
+
     procedure edtPvtKeyHexChange(Sender: TObject);
-    procedure edtPvtKeyHexDblClick(Sender: TObject);
+
     procedure edtPvtKeyWIFCompChange(Sender: TObject);
-    procedure edtPvtKeyWIFCompDblClick(Sender: TObject);
-    procedure edtPvtKeyWIFDblClick(Sender: TObject);
+
     procedure FormCreate(Sender: TObject);
+    procedure DblClick2CLPBRD(Sender: TObject);
+
   private
 
   public
 
+
+
+
   end;
 
-  function ByteToString(const Value: TBytes): String;
-  function StrToByte(const Value: String): TBytes;
-  function ByteToHexString(input: TBytes): String;
+
+    function ByteToString(const Value: TBytes): String;
+    function StrToByte(const Value: String): TBytes;
+    function ByteToHexString(input: TBytes): String;
+
 
 var
 frmMain: TfrmMain;
@@ -108,6 +115,7 @@ begin
        // KeyPair := TbtcKeyFunctions.GenPubKeyFromPvtInput(TKeyType.SECP256K1);
         // now I am stuck... how do I tell this function what my input private key is?
 
+        //TbtcKeyFunctions.GenPubKeyFromPvtInput();
         btnBrainpvtKey.Enabled:=false;
         btnRNDpvtKey.enabled:=false;
         btnComputePrvKeyDet.enabled:=true;
@@ -162,6 +170,7 @@ begin
           btnComputePrvKeyDet.enabled := true;
           btnComputePubKeyDet.Enabled:=true;
           btnRNDpvtKey.enabled:=false;
+          btnBrainpvtKey.Enabled:=False;
           btnRNDpvtKey.Caption:='Generate New Random Private Key (More Secure)';
      end;
 
@@ -191,30 +200,19 @@ begin
    edtBTCaddrCompr.Hint:= IntToStr(length(edtBTCaddrCompr.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtBTCaddrComprDblClick(Sender: TObject);
-begin
-     clipboard.AsText:=edtBTCaddrCompr.text;
-end;
+
 
 procedure TfrmMain.edtBTCaddressChange(Sender: TObject);
 begin
   edtBTCaddress.Hint:= IntToStr(length(edtBTCaddress.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtBTCaddressDblClick(Sender: TObject);
-begin
-      clipboard.AsText:=edtBTCaddress.text;
-end;
 
 procedure TfrmMain.edtPassPhraseChange(Sender: TObject);
 begin
   edtPassPhrase.Hint:= IntToStr(length(edtPassPhrase.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtPassPhraseDblClick(Sender: TObject);
-begin
-   clipboard.AsText:=edtPassPhrase.text;
-end;
 
 procedure TfrmMain.edtPubKeyChange(Sender: TObject);
 begin
@@ -226,36 +224,21 @@ begin
    edtPubKeyComp.Hint:= IntToStr(length(edtPubKeyComp.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtPubKeyCompDblClick(Sender: TObject);
-begin
-   clipboard.AsText:=edtPubKeyComp.text;
-end;
 
-procedure TfrmMain.edtPubKeyDblClick(Sender: TObject);
-begin
-     clipboard.AsText:=edtPubKey.text;
-end;
 
 procedure TfrmMain.edtPvtKeyB64Change(Sender: TObject);
 begin
      edtPvtKeyB64.Hint:= IntToStr(length(edtPvtKeyB64.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtPvtKeyB64DblClick(Sender: TObject);
-begin
-  clipboard.AsText:=edtPvtKeyB64.text;
-end;
+
 
 procedure TfrmMain.edtPvtKeyChange(Sender: TObject);
 begin
    edtPvtKey.Hint:= IntToStr(length(edtPvtKey.Text)) + ' Characters Counted (debuging hint)';
 end;
 
-procedure TfrmMain.edtPvtKeyDblClick(Sender: TObject);
-begin
 
-  clipboard.AsText:=edtPvtKey.text;
-end;
 
 procedure TfrmMain.edtPvtKeyHexChange(Sender: TObject);
 begin
@@ -263,10 +246,21 @@ begin
 end;
 
 
-procedure TfrmMain.edtPvtKeyHexDblClick(Sender: TObject);
+
+
+
+procedure TfrmMain.DblClick2CLPBRD(Sender: TObject);
+var
+theText: TLabeledEdit;
 begin
-   clipboard.AsText:=edtPvtKeyHex.text;
+     theText:= sender as TLabeledEdit;
+   clipboard.AsText:=theText.text;
 end;
+
+
+
+
+
 
 procedure TfrmMain.edtPvtKeyWIFCompChange(Sender: TObject);
 begin
@@ -274,15 +268,10 @@ begin
 end;
 
 
-procedure TfrmMain.edtPvtKeyWIFCompDblClick(Sender: TObject);
-begin
-  clipboard.AsText:=edtPvtKeyWIFComp.text;
-end;
 
-procedure TfrmMain.edtPvtKeyWIFDblClick(Sender: TObject);
-begin
-   clipboard.AsText:=edtPvtKeyWIF.text;
-end;
+
+
+
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
@@ -305,18 +294,11 @@ begin
   result := '';
   for index := System.Low(input) to System.High(input) do
   begin
-    if index = 0 then
-    begin
-      result := result + IntToHex(input[index], 2);
-    end
-    else
-    begin
-      result := result + IntToHex(input[index], 2);
-    end;
-  end;
-  result :=  result;
+    result := result + IntToHex(input[index], 2);
   end;
 
+
+ end;
 
 function ByteToString(const Value: TBytes): String;
 var
