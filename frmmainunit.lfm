@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 1827
+  Left = 2204
   Height = 780
-  Top = 1184
+  Top = 1108
   Width = 1156
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
   ClientHeight = 780
@@ -29,9 +29,9 @@ object frmMain: TfrmMain
     Height = 757
     Top = 0
     Width = 1156
-    ActivePage = TabSheet3
+    ActivePage = TabSheet2
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet3: TTabSheet
@@ -361,7 +361,7 @@ object frmMain: TfrmMain
         Width = 161
         Caption = 'Cancel'
         OnClick = btnCancelClick
-        TabOrder = 3
+        TabOrder = 2
       end
       object btnBulkGen: TButton
         Left = 10
@@ -387,6 +387,7 @@ object frmMain: TfrmMain
         BorderSpacing.Right = 10
         Font.Height = -9
         Font.Name = 'Monospace'
+        OnChange = memBulkChange
         ParentFont = False
         ReadOnly = True
         ScrollBars = ssAutoBoth
@@ -401,15 +402,6 @@ object frmMain: TfrmMain
         Caption = 'Comma seperated list:                (private Key, public key)'
         ParentColor = False
       end
-      object edtBulkAmount: TEdit
-        Left = 400
-        Height = 25
-        Top = 8
-        Width = 184
-        NumbersOnly = True
-        TabOrder = 2
-        Text = '15'
-      end
       object Label6: TLabel
         Left = 184
         Height = 14
@@ -417,6 +409,29 @@ object frmMain: TfrmMain
         Width = 204
         Caption = 'Number of addresses to generate:'
         ParentColor = False
+      end
+      object btnSaveBulk: TButton
+        Left = 624
+        Height = 23
+        Top = 8
+        Width = 184
+        Caption = 'Save To File'
+        Enabled = False
+        OnClick = btnSaveBulkClick
+        TabOrder = 3
+      end
+      object edtBulkAmount: TMaskEdit
+        Left = 400
+        Height = 25
+        Top = 8
+        Width = 99
+        CharCase = ecNormal
+        MaxLength = 3
+        TabOrder = 4
+        OnKeyPress = edtBulkAmountKeyPress
+        EditMask = '999'
+        Text = '25'
+        SpaceChar = #0
       end
     end
     object TabSheet1: TTabSheet
@@ -437,6 +452,10 @@ object frmMain: TfrmMain
     Enabled = False
     OnTimer = tmrKeyPerSecTimer
     Left = 1010
+    Top = 45
+  end
+  object dlgSave: TSaveDialog
+    Left = 1040
     Top = 45
   end
 end

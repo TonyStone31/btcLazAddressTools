@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="13">
+    <Units Count="14">
       <Unit0>
         <Filename Value="btcaddresstools.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="36" Y="19"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="43"/>
       </Unit0>
       <Unit1>
         <Filename Value="frmmainunit.pas"/>
@@ -19,150 +19,223 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmMainunit"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="246"/>
-        <CursorPos X="29" Y="284"/>
-        <UsageCount Value="32"/>
+        <TopLine Value="237"/>
+        <CursorPos X="25" Y="255"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="btckeyfunctions.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="190"/>
         <CursorPos X="3" Y="208"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="USha256.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="220"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="306"/>
         <CursorPos X="75" Y="240"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="lib/HashLib4Pascal-master/HashLib/src/Interfaces/IBlake2SParams/HlpIBlake2SParams.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit4>
       <Unit5>
         <Filename Value="/usr/share/fpcsrc/3.2.0/rtl/unix/sysutils.pp"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit5>
       <Unit6>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Interfaces/ClpIECPrivateKeyParameters.pas"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="4"/>
         <CursorPos X="3" Y="30"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Interfaces/ClpIAsymmetricCipherKeyPairGenerator.pas"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="14"/>
         <CursorPos X="24" Y="44"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Interfaces/ClpIAsymmetricCipherKeyPair.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="12"/>
         <CursorPos X="3" Y="28"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Interfaces/ClpIAsymmetricKeyParameter.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="7"/>
         <CursorPos X="19" Y="37"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Include/CryptoLib.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="202"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit10>
       <Unit11>
         <Filename Value="/usr/share/fpcsrc/3.2.0/rtl/inc/systemh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="320"/>
         <CursorPos X="3" Y="338"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit11>
       <Unit12>
         <Filename Value="lib/CryptoLib4Pascal-master/CryptoLib/src/Interfaces/ClpICipherParameters.pas"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <CursorPos Y="18"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit12>
+      <Unit13>
+        <Filename Value="/usr/share/lazarus/2.0.12/components/lazutils/lazutf8classes.pas"/>
+        <UnitName Value="LazUTF8Classes"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="132"/>
+        <CursorPos Y="151"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit13>
     </Units>
-    <JumpHistory Count="14" HistoryIndex="13">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="203" Column="88"/>
+        <Caret Line="238" Column="17" TopLine="224"/>
       </Position1>
       <Position2>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="205" Column="88" TopLine="163"/>
+        <Caret Line="270" Column="28" TopLine="268"/>
       </Position2>
       <Position3>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="234" Column="3" TopLine="232"/>
+        <Caret Line="244" Column="44" TopLine="233"/>
       </Position3>
       <Position4>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="82" Column="24" TopLine="85"/>
+        <Caret Line="238" Column="15" TopLine="233"/>
       </Position4>
       <Position5>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="199" Column="95" TopLine="168"/>
+        <Caret Line="250" Column="53" TopLine="220"/>
       </Position5>
       <Position6>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="193" Column="6" TopLine="176"/>
+        <Caret Line="244" Column="44" TopLine="224"/>
       </Position6>
       <Position7>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="227" Column="55" TopLine="193"/>
+        <Caret Line="253" Column="3" TopLine="228"/>
       </Position7>
       <Position8>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="226" Column="55" TopLine="192"/>
+        <Caret Line="246" Column="46" TopLine="228"/>
       </Position8>
       <Position9>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="213" Column="58" TopLine="193"/>
+        <Caret Line="352" Column="19" TopLine="226"/>
       </Position9>
       <Position10>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="255" Column="33" TopLine="240"/>
+        <Caret Line="239" Column="14" TopLine="226"/>
       </Position10>
       <Position11>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="179" Column="33" TopLine="165"/>
+        <Caret Line="247" Column="5" TopLine="221"/>
       </Position11>
       <Position12>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="259" Column="120" TopLine="241"/>
+        <Caret Line="243" Column="40" TopLine="226"/>
       </Position12>
       <Position13>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="258" Column="120" TopLine="240"/>
+        <Caret Line="241" Column="3" TopLine="226"/>
       </Position13>
       <Position14>
         <Filename Value="frmmainunit.pas"/>
-        <Caret Line="261" Column="120" TopLine="240"/>
+        <Caret Line="213" Column="3" TopLine="176"/>
       </Position14>
+      <Position15>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="205" Column="8" TopLine="185"/>
+      </Position15>
+      <Position16>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="244" Column="6" TopLine="231"/>
+      </Position16>
+      <Position17>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="261" Column="37" TopLine="231"/>
+      </Position17>
+      <Position18>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="256" Column="16" TopLine="238"/>
+      </Position18>
+      <Position19>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="255" Column="36" TopLine="238"/>
+      </Position19>
+      <Position20>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="256" Column="36" TopLine="239"/>
+      </Position20>
+      <Position21>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="255" Column="36" TopLine="238"/>
+      </Position21>
+      <Position22>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="254" Column="36" TopLine="237"/>
+      </Position22>
+      <Position23>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="255" Column="5" TopLine="238"/>
+      </Position23>
+      <Position24>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="256" Column="5" TopLine="239"/>
+      </Position24>
+      <Position25>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="255" Column="5" TopLine="238"/>
+      </Position25>
+      <Position26>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="252" TopLine="238"/>
+      </Position26>
+      <Position27>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="57" Column="51" TopLine="40"/>
+      </Position27>
+      <Position28>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="250" Column="5" TopLine="236"/>
+      </Position28>
+      <Position29>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="56" Column="49" TopLine="40"/>
+      </Position29>
+      <Position30>
+        <Filename Value="frmmainunit.pas"/>
+        <Caret Line="186" TopLine="167"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
