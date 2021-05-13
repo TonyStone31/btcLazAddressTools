@@ -25,22 +25,19 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="atflatcontrols_package"/>
+        <PackageName Value="SimpleBaseLib4PascalPackage"/>
       </Item1>
       <Item2>
-        <PackageName Value="SimpleBaseLib4PascalPackage"/>
+        <PackageName Value="HashLib4PascalPackage"/>
       </Item2>
       <Item3>
-        <PackageName Value="HashLib4PascalPackage"/>
+        <PackageName Value="CryptoLib4PascalPackage"/>
       </Item3>
       <Item4>
-        <PackageName Value="CryptoLib4PascalPackage"/>
-      </Item4>
-      <Item5>
         <PackageName Value="LCL"/>
-      </Item5>
+      </Item4>
     </RequiredPackages>
     <Units Count="4">
       <Unit0>

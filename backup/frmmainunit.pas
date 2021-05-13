@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, ExtCtrls,
-  StdCtrls, btckeyfunctions, ClpEncoders, Clipbrd, MaskEdit, Spin, USha256;
+  StdCtrls, btckeyfunctions, ClpEncoders, Clipbrd, MaskEdit, Spin, EditBtn,
+  USha256;
 
 type
 
@@ -20,6 +21,7 @@ type
     btnBulkGen: TButton;
     btnCancel: TButton;
     btnSaveBulk: TButton;
+    edtBulkAmount: TEdit;
     edtBTCaddrCompr: TLabeledEdit;
     edtBTCaddress: TLabeledEdit;
     edtPubKey: TLabeledEdit;
@@ -35,7 +37,6 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label6: TLabel;
-    edtBulkAmount: TMaskEdit;
     memBulk: TMemo;
     PageControl1: TPageControl;
     Panel1: TPanel;
@@ -186,6 +187,7 @@ begin
   qty := StrToInt(edtBulkAmount.Text);
   memBulk.Lines.Clear;
   forcedCancel := False;
+  edtBulkAmount.Enabled:=false;
   btnBulkGen.Visible := False;  // so user doesnt keep clicking if generating large list
 
 
@@ -221,6 +223,7 @@ begin
   StatusBar.Panels.Items[0].Text := '0/Keys Per Second';
   tmrKeyPerSec.Enabled := False; // stop timer... no point in keeping it enabled
   btnBulkGen.Visible := True;  // re-enables so user can smash all day long... whatever
+  edtBulkAmount.Enabled:=true;
 
 end;
 
@@ -249,10 +252,25 @@ begin
 
 end;
 
+
 procedure TfrmMain.edtBulkAmountKeyPress(Sender: TObject; var Key: char);
 begin
+
+
      if (key = #13) and (StrToInt(edtBulkAmount.Text) > 0) then
-        btnBulkGen.Click;
+     begin
+          btnBulkGen.Click;
+          abort;
+     end;
+
+     // #8 is Backspace
+  if not (Key in [#8, '0'..'9']) then begin
+    ShowMessage('Invalid key');
+    // Discard the key
+    Key := #0;
+  end;
+
+
 end;
 
 procedure TfrmMain.DblClick2CLPBRD(Sender: TObject);

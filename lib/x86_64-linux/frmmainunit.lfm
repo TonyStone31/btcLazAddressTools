@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 2204
+  Left = 2104
   Height = 780
-  Top = 1108
+  Top = 1156
   Width = 1156
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
   ClientHeight = 780
@@ -420,18 +420,16 @@ object frmMain: TfrmMain
         OnClick = btnSaveBulkClick
         TabOrder = 3
       end
-      object edtBulkAmount: TMaskEdit
-        Left = 400
+      object edtBulkAmount: TEdit
+        Left = 392
         Height = 25
-        Top = 8
-        Width = 99
-        CharCase = ecNormal
-        MaxLength = 3
-        TabOrder = 4
+        Top = 14
+        Width = 126
+        MaxLength = 6
+        NumbersOnly = True
         OnKeyPress = edtBulkAmountKeyPress
-        EditMask = '999'
+        TabOrder = 4
         Text = '25'
-        SpaceChar = #0
       end
     end
     object TabSheet1: TTabSheet
