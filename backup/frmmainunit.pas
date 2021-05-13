@@ -123,8 +123,9 @@ procedure TfrmMain.btnComputePrvKeyDetClick(Sender: TObject);
 begin
   edtPvtKeyHex.Text := edtPvtKey.Text;
 
-  edtPvtKeyB64.Text := TBase64.Encode(KeyPair.PrivateKey);
-  edtPvtKeyWIFComp.Text := TBase58.Encode(KeyPair.PrivateKey);
+  edtPvtKeyB64.Text := TBase64.Encode(THex.Decode(edtPvtKeyHex.Text));
+  edtPvtKeyWIF.Text := TbtcKeyFunctions.GetPrivateKeyWIF(edtPvtKeyHex.Text, False);
+  edtPvtKeyWIFComp.Text := TbtcKeyFunctions.GetPrivateKeyWIF(edtPvtKeyHex.Text, True);
   btnComputePrvKeyDet.Enabled := False;
   if (btnComputePubKeyDet.Enabled = False) and (btnComputePrvKeyDet.Enabled = False) then
   begin
@@ -134,8 +135,15 @@ begin
 end;
 
 procedure TfrmMain.btnComputePubKeyDetClick(Sender: TObject);
+var
+  Address, PubKey: String;
 begin
-  edtPubKey.Text := ByteToHexString(KeyPair.PublicKey);
+  TbtcKeyFunctions.GetPublicKeyDetails(edtPvtKey.Text, False, Address, PubKey);
+  edtBTCaddress.Text := Address;
+  edtPubKey.Text := PubKey;
+  TbtcKeyFunctions.GetPublicKeyDetails(edtPvtKey.Text, True, Address, PubKey);
+  edtBTCaddrCompr.Text := Address;
+  edtPubKeyComp.Text := PubKey;
   btnComputePubKeyDet.Enabled := False;
   if (btnComputePubKeyDet.Enabled = False) and
     (btnComputePrvKeyDet.Enabled = False) then
@@ -148,8 +156,7 @@ end;
 procedure TfrmMain.btnRNDpvtKeyClick(Sender: TObject);
 begin
 
-  KeyPair := TbtcKeyFunctions.GenerateECKeyPair(TKeyType.SECP256K1);
-  edtPvtKey.Text := ByteToHexString(KeyPair.PrivateKey);
+  edtPvtKey.Text := TbtcKeyFunctions.GenerateValidRandomBytesForPrivateKey();
 
   edtPvtKey.Hint := IntToStr(length(edtPvtKey.Text)) +
     ' Characters Counted (debuging hint)';
@@ -235,6 +242,8 @@ begin
   keysGenPerSec := 0;
   StatusBar.Panels.Items[0].Text := '0/Keys Per Second';
   tmrKeyPerSec.Enabled := False;
+  edtBulkAmount.Enabled:=true;
+
 end;
 
 procedure TfrmMain.btnSaveBulkClick(Sender: TObject);

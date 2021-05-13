@@ -24,7 +24,8 @@ uses
   ClpECDomainParameters,
   ClpECKeyGenerationParameters,
   ClpIECKeyGenerationParameters,
-  ClpIAsymmetricCipherKeyPairGenerator;
+  ClpIAsymmetricCipherKeyPairGenerator,
+  UBitcoinKey;
 
 type
   TKeyPair = record
@@ -38,6 +39,9 @@ type
 {$SCOPEDENUMS OFF}
 
 type
+
+  { TbtcKeyFunctions }
+
   TbtcKeyFunctions = class sealed(TObject)
 
   strict private
@@ -69,12 +73,20 @@ type
       : Boolean; static;
 
     class function GenPubKeyFromPvtInput(AKeyType: TKeyType): TKeyPair;
+
+    class function GenerateValidRandomBytesForPrivateKey(): String; static;
+
+    class procedure GetPublicKeyDetails(const APrivateKey: String;
+      isCompressed: Boolean; var Address, PubKey: String); static;
+
+    class function GetPrivateKeyWIF(const APrivateKey: String;
+      isCompressed: Boolean): String; static;
   end;
 
 implementation
 
-class function tbtckeyfunctions.GetCurveFromKeyType(AKeyType: TKeyType)
-  : IX9ECParameters;
+class function TbtcKeyFunctions.GetCurveFromKeyType(AKeyType: TKeyType
+  ): IX9ECParameters;
 var
   CurveName: string;
 begin
@@ -82,19 +94,19 @@ begin
   Result := TCustomNamedCurves.GetByName(CurveName);
 end;
 
-class function tbtckeyfunctions.GetCurve(keyType: TKeyType): IX9ECParameters;
+class function TbtcKeyFunctions.GetCurve(keyType: TKeyType): IX9ECParameters;
 begin
   Result := GetCurveFromKeyType(keyType);
 end;
 
-class function tbtckeyfunctions.GetDomain(curve: IX9ECParameters)
-  : IECDomainParameters;
+class function TbtcKeyFunctions.GetDomain(curve: IX9ECParameters
+  ): IECDomainParameters;
 begin
   Result := TECDomainParameters.Create(curve.curve, curve.G, curve.N, curve.H,
     curve.GetSeed);
 end;
 
-class function tbtckeyfunctions.GetSecureRandom: ISecureRandom;
+class function TbtcKeyFunctions.GetSecureRandom: ISecureRandom;
 begin
   if FSecureRandom <> Nil then
   begin
@@ -107,12 +119,12 @@ begin
   end;
 end;
 
-class function tbtckeyfunctions.GetSigner(): ISigner;
+class function TbtcKeyFunctions.GetSigner(): ISigner;
 begin
   Result := TSignerUtilities.GetSigner(SigningAlgorithm);
 end;
 
-class function tbtckeyfunctions.SignMessage(const message: TBytes;
+class function TbtcKeyFunctions.SignMessage(const &message: TBytes;
   const PrivateKey: TBytes; AKeyType: TKeyType): TBytes;
 var
   LSigner: ISigner;
@@ -130,7 +142,7 @@ begin
   Result := LSigner.GenerateSignature();
 end;
 
-class function tbtckeyfunctions.VerifySignature(const signature: TBytes;
+class function TbtcKeyFunctions.VerifySignature(const signature: TBytes;
   const &message: TBytes; const PublicKey: TBytes; AKeyType: TKeyType): Boolean;
 var
   LSigner: ISigner;
@@ -148,7 +160,7 @@ begin
   Result := LSigner.VerifySignature(signature);
 end;
 
-class function tbtckeyfunctions.GenerateECKeyPair(AKeyType: TKeyType): TKeyPair;
+class function TbtcKeyFunctions.GenerateECKeyPair(AKeyType: TKeyType): TKeyPair;
 var
   LCurve: IX9ECParameters;
   domain: IECDomainParameters;
@@ -201,7 +213,8 @@ end;
 
 
 
-class function Tbtckeyfunctions.GenPubKeyFromPvtInput(AKeyType: TKeyType): TKeyPair;
+class function TbtcKeyFunctions.GenPubKeyFromPvtInput(AKeyType: TKeyType
+  ): TKeyPair;
 var
   LCurve: IX9ECParameters;
   domain: IECDomainParameters;
@@ -221,6 +234,30 @@ begin
   Result.PrivateKey := (askp.Private as IECPrivateKeyParameters)
     .D.ToByteArrayUnsigned;
   Result.PublicKey := (askp.Public as IECPublicKeyParameters).Q.GetEncoded();
+end;
+
+class function TbtcKeyFunctions.GenerateValidRandomBytesForPrivateKey(): String;
+begin
+  Result := THex.Encode(TBitcoinKey.GenerateValidRandomBytesForPrivateKey());
+end;
+
+class procedure TbtcKeyFunctions.GetPublicKeyDetails(const APrivateKey: String;
+  isCompressed: Boolean; var Address, PubKey: String);
+var
+  Key: IBitcoinKey;
+begin
+  Key := TBitcoinKey.Create(THex.Decode(APrivateKey), -1, isCompressed);
+  Address := Key.GeneratePublicAddress(Key.IsCompressed);
+  PubKey := THex.Encode(Key.PublicKey.Q.Normalize.GetEncoded(Key.IsCompressed));
+end;
+
+class function TbtcKeyFunctions.GetPrivateKeyWIF(const APrivateKey: String;
+  isCompressed: Boolean): String;
+var
+  Key: IBitcoinKey;
+begin
+  Key := TBitcoinKey.Create(THex.Decode(APrivateKey), -1, isCompressed);
+  Result := Key.GenerateWIFPrivateKey(Key.IsCompressed);
 end;
 
 

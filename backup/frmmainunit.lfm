@@ -1,72 +1,78 @@
 object frmMain: TfrmMain
   Left = 2104
-  Height = 780
+  Height = 975
   Top = 1156
-  Width = 1156
+  Width = 1445
   Caption = 'BitCoin Address Tools - inspired by bitaddress.org - Made with Lazarus and FreePascal!!'
-  ClientHeight = 780
-  ClientWidth = 1156
-  Constraints.MinHeight = 750
-  Constraints.MinWidth = 850
+  ClientHeight = 975
+  ClientWidth = 1445
+  Constraints.MinHeight = 938
+  Constraints.MinWidth = 1062
+  DesignTimePPI = 120
   OnCreate = FormCreate
   Position = poDefault
   ShowHint = True
-  LCLVersion = '2.0.12.0'
   object StatusBar: TStatusBar
     Left = 0
-    Height = 23
-    Top = 757
-    Width = 1156
+    Height = 29
+    Top = 946
+    Width = 1445
     Panels = <    
       item
         Alignment = taRightJustify
-        Width = 50
+        Width = 62
       end>
+    ParentFont = False
     SimplePanel = False
   end
   object PageControl1: TPageControl
     Left = 0
-    Height = 757
+    Height = 946
     Top = 0
-    Width = 1156
-    ActivePage = TabSheet2
+    Width = 1445
+    ActivePage = TabSheet3
     Align = alClient
-    TabIndex = 1
+    ParentFont = False
+    TabIndex = 0
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet3: TTabSheet
       Caption = 'Key-Pair Explorer'
-      ClientHeight = 723
-      ClientWidth = 1150
+      ClientHeight = 913
+      ClientWidth = 1437
+      ParentFont = False
       object Panel2: TPanel
         AnchorSideLeft.Control = TabSheet3
         AnchorSideRight.Control = TabSheet3
         AnchorSideRight.Side = asrBottom
-        Left = 10
-        Height = 256
-        Top = 176
-        Width = 1130
+        Left = 12
+        Height = 320
+        Top = 220
+        Width = 1413
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Left = 10
-        BorderSpacing.Right = 10
-        ClientHeight = 256
-        ClientWidth = 1130
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 12
+        ClientHeight = 320
+        ClientWidth = 1413
+        ParentFont = False
         TabOrder = 1
         object edtPubKeyComp: TLabeledEdit
           AnchorSideLeft.Control = Panel2
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 224
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 280
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Public Key (compressed, 66 characters [0-9A-F]):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 4
           OnChange = edtDbgHintLength
@@ -76,17 +82,19 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel2
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 168
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 210
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Public Key Hexidecimal (130 characters [0-9A-F]):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 3
           OnChange = edtDbgHintLength
@@ -96,17 +104,19 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel2
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 112
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 140
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Bitcoin Address (compressed):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 2
           OnChange = edtDbgHintLength
@@ -116,38 +126,42 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel2
           AnchorSideRight.Control = Panel2
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 56
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 70
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Bitcoin Address:'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 1
           OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object Label2: TLabel
-          Left = 16
-          Height = 14
-          Top = 8
-          Width = 107
+          Left = 20
+          Height = 20
+          Top = 10
+          Width = 118
           Caption = 'Public Key Details'
           ParentColor = False
+          ParentFont = False
         end
         object btnComputePubKeyDet: TButton
-          Left = 150
-          Height = 20
-          Top = 8
-          Width = 184
+          Left = 188
+          Height = 25
+          Top = 10
+          Width = 230
           Caption = 'Compute Below'
           Enabled = False
           OnClick = btnComputePubKeyDetClick
+          ParentFont = False
           TabOrder = 0
         end
       end
@@ -155,31 +169,34 @@ object frmMain: TfrmMain
         AnchorSideLeft.Control = TabSheet3
         AnchorSideRight.Control = TabSheet3
         AnchorSideRight.Side = asrBottom
-        Left = 10
-        Height = 256
-        Top = 432
-        Width = 1130
+        Left = 12
+        Height = 320
+        Top = 540
+        Width = 1413
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Left = 10
-        BorderSpacing.Right = 10
-        ClientHeight = 256
-        ClientWidth = 1130
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 12
+        ClientHeight = 320
+        ClientWidth = 1413
+        ParentFont = False
         TabOrder = 2
         object edtPvtKeyB64: TLabeledEdit
           AnchorSideLeft.Control = Panel3
           AnchorSideRight.Control = Panel3
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 223
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 279
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Private Key Base64 (44 characters):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 4
           OnChange = edtDbgHintLength
@@ -189,17 +206,19 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel3
           AnchorSideRight.Control = Panel3
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 167
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 209
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Private Key Hexadecimal Format (64 characters [0-9A-F]):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 3
           OnChange = edtDbgHintLength
@@ -209,17 +228,19 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel3
           AnchorSideRight.Control = Panel3
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 111
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 139
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Private Key WIF (compressed, 52 characters base58, starts with a ''K'' or ''L''):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 2
           OnChange = edtDbgHintLength
@@ -229,38 +250,42 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel3
           AnchorSideRight.Control = Panel3
           AnchorSideRight.Side = asrBottom
-          Left = 9
-          Height = 25
-          Top = 55
-          Width = 1110
+          Left = 11
+          Height = 28
+          Top = 69
+          Width = 1389
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 8
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1110
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1389
           EditLabel.Caption = 'Private Key WIF (51 characters base58, starts with a ''5''):'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 1
           OnChange = edtDbgHintLength
           OnDblClick = DblClick2CLPBRD
         end
         object Label3: TLabel
-          Left = 16
-          Height = 14
-          Top = 14
-          Width = 112
+          Left = 20
+          Height = 20
+          Top = 18
+          Width = 123
           Caption = 'Private Key Details'
           ParentColor = False
+          ParentFont = False
         end
         object btnComputePrvKeyDet: TButton
-          Left = 150
-          Height = 20
-          Top = 8
-          Width = 184
+          Left = 188
+          Height = 25
+          Top = 10
+          Width = 230
           Caption = 'Compute Below'
           Enabled = False
           OnClick = btnComputePrvKeyDetClick
+          ParentFont = False
           TabOrder = 0
         end
       end
@@ -268,61 +293,66 @@ object frmMain: TfrmMain
         AnchorSideLeft.Control = TabSheet3
         AnchorSideRight.Control = TabSheet3
         AnchorSideRight.Side = asrBottom
-        Left = 10
-        Height = 168
-        Top = 8
-        Width = 1130
+        Left = 12
+        Height = 210
+        Top = 10
+        Width = 1413
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Left = 10
-        BorderSpacing.Right = 10
-        ClientHeight = 168
-        ClientWidth = 1130
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 12
+        ClientHeight = 210
+        ClientWidth = 1413
+        ParentFont = False
         TabOrder = 0
         object btnRNDpvtKey: TButton
           AnchorSideLeft.Control = Panel1
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
-          Left = 11
-          Height = 24
-          Top = 80
-          Width = 1108
+          Left = 13
+          Height = 30
+          Top = 100
+          Width = 1387
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 10
-          BorderSpacing.Right = 10
+          BorderSpacing.Left = 12
+          BorderSpacing.Right = 12
           Caption = 'Generate Random Private Key (More Secure)'
           OnClick = btnRNDpvtKeyClick
+          ParentFont = False
           TabOrder = 1
         end
         object btnBrainpvtKey: TButton
           AnchorSideLeft.Control = Panel1
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
-          Left = 11
-          Height = 24
-          Top = 48
-          Width = 1108
+          Left = 13
+          Height = 30
+          Top = 60
+          Width = 1387
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 10
-          BorderSpacing.Right = 10
+          BorderSpacing.Left = 12
+          BorderSpacing.Right = 12
           Caption = 'Generate Private Key Using Above Brain Wallet Stuff'
           OnClick = btnBrainpvtKeyClick
+          ParentFont = False
           TabOrder = 0
         end
         object edtPvtKey: TLabeledEdit
           AnchorSideLeft.Control = Panel1
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
-          Left = 11
-          Height = 25
-          Top = 136
-          Width = 1108
+          Left = 13
+          Height = 28
+          Top = 170
+          Width = 1387
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 10
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1108
+          BorderSpacing.Left = 12
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1387
           EditLabel.Caption = 'Private Key as HEX (Generated from one of the above methods)'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           ReadOnly = True
           TabOrder = 2
           OnChange = edtDbgHintLength
@@ -332,17 +362,19 @@ object frmMain: TfrmMain
           AnchorSideLeft.Control = Panel1
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
-          Left = 11
-          Height = 25
-          Top = 24
-          Width = 1108
+          Left = 13
+          Height = 28
+          Top = 30
+          Width = 1387
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 10
-          BorderSpacing.Right = 10
-          EditLabel.Height = 14
-          EditLabel.Width = 1108
+          BorderSpacing.Left = 12
+          BorderSpacing.Right = 12
+          EditLabel.Height = 20
+          EditLabel.Width = 1387
           EditLabel.Caption = 'Brain Wallet - Word List (PASSPHRASE / (aka seed phrase?) )  (12-24 words) (WILL BE SHA256)'
           EditLabel.ParentColor = False
+          EditLabel.ParentFont = False
+          ParentFont = False
           TabOrder = 3
           Text = 'bubble kid safe candle dumpster fire family link removed vehicle implement cracker'
           OnChange = edtDbgHintLength
@@ -352,24 +384,27 @@ object frmMain: TfrmMain
     end
     object TabSheet2: TTabSheet
       Caption = 'Bulk Wallet Generator'
-      ClientHeight = 723
-      ClientWidth = 1150
+      ClientHeight = 913
+      ClientWidth = 1437
+      ParentFont = False
       object btnCancel: TButton
-        Left = 10
-        Height = 32
-        Top = 8
-        Width = 161
+        Left = 12
+        Height = 40
+        Top = 10
+        Width = 201
         Caption = 'Cancel'
         OnClick = btnCancelClick
+        ParentFont = False
         TabOrder = 2
       end
       object btnBulkGen: TButton
-        Left = 10
-        Height = 32
-        Top = 8
-        Width = 161
+        Left = 12
+        Height = 40
+        Top = 10
+        Width = 201
         Caption = 'Generate'
         OnClick = btnBulkGenClick
+        ParentFont = False
         TabOrder = 0
       end
       object memBulk: TMemo
@@ -378,14 +413,14 @@ object frmMain: TfrmMain
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = TabSheet2
         AnchorSideBottom.Side = asrBottom
-        Left = 10
-        Height = 651
-        Top = 72
-        Width = 1130
+        Left = 12
+        Height = 823
+        Top = 90
+        Width = 1413
         Anchors = [akTop, akLeft, akRight, akBottom]
-        BorderSpacing.Left = 10
-        BorderSpacing.Right = 10
-        Font.Height = -9
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 12
+        Font.Height = -11
         Font.Name = 'Monospace'
         OnChange = memBulkChange
         ParentFont = False
@@ -395,65 +430,71 @@ object frmMain: TfrmMain
         WordWrap = False
       end
       object Label1: TLabel
-        Left = 10
-        Height = 14
-        Top = 56
-        Width = 322
+        Left = 12
+        Height = 20
+        Top = 70
+        Width = 370
         Caption = 'Comma seperated list:                (private Key, public key)'
         ParentColor = False
+        ParentFont = False
       end
       object Label6: TLabel
-        Left = 184
-        Height = 14
-        Top = 8
-        Width = 204
+        Left = 230
+        Height = 20
+        Top = 10
+        Width = 225
         Caption = 'Number of addresses to generate:'
         ParentColor = False
+        ParentFont = False
       end
       object btnSaveBulk: TButton
-        Left = 624
-        Height = 23
-        Top = 8
-        Width = 184
+        Left = 780
+        Height = 29
+        Top = 10
+        Width = 230
         Caption = 'Save To File'
         Enabled = False
         OnClick = btnSaveBulkClick
+        ParentFont = False
         TabOrder = 3
       end
       object edtBulkAmount: TEdit
-        Left = 392
-        Height = 25
-        Top = 14
-        Width = 126
+        Left = 490
+        Height = 28
+        Top = 18
+        Width = 158
         MaxLength = 6
         NumbersOnly = True
         OnKeyPress = edtBulkAmountKeyPress
+        ParentFont = False
         TabOrder = 4
         Text = '25'
       end
     end
     object TabSheet1: TTabSheet
       Caption = 'About This Tool'
-      ClientHeight = 723
-      ClientWidth = 1150
+      ClientHeight = 913
+      ClientWidth = 1437
+      ParentFont = False
       object Label4: TLabel
-        Left = 44
-        Height = 168
-        Top = 32
-        Width = 627
+        Left = 55
+        Height = 240
+        Top = 40
+        Width = 693
         Caption = 'This tool was created by Tony Stone and inspired by http://coreyhaddad.com/bitcoin/bitaddress.org.htm.'#10#10'The purpose is to securely generate Bitcoin Addresses that can be used.'#10#10'The other purpose of creating this tool was an exercise in learning to use '#10'the Lazarus IDE and some Pascal development.'#10#10'The cryptographic function are all written and implemented by use of'#10'CryptoLib4Pascal by Xor-el and his source code can be found at'#10'https://github.com/Xor-el/CryptoLib4Pascal.'#10#10'The source of this program can be found on my Github (When I learn to properly use it)'
         ParentColor = False
+        ParentFont = False
       end
     end
   end
   object tmrKeyPerSec: TTimer
     Enabled = False
     OnTimer = tmrKeyPerSecTimer
-    Left = 1010
-    Top = 45
+    Left = 1263
+    Top = 56
   end
   object dlgSave: TSaveDialog
-    Left = 1040
-    Top = 45
+    Left = 1300
+    Top = 56
   end
 end
